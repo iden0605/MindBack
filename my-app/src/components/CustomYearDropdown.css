@@ -1,0 +1,103 @@
+.custom-year-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+}
+
+.dropdown-toggle-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--label-color);
+  font-size: 0.95rem;
+  font-family: inherit;
+  padding: 5px 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s, color 0.2s;
+  min-width: 70px;
+  justify-content: space-between;
+}
+
+.dropdown-toggle-btn:hover {
+  background-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.dropdown-toggle-btn:focus {
+  outline: none;
+  background-color: var(--border-color);
+  color: var(--highlight-color);
+}
+
+.dropdown-arrow {
+  font-size: 0.7em;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-options-list {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--input-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  padding: 5px 0;
+  margin: 5px 0 0 0;
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+  min-width: 100px;
+}
+
+.dropdown-options-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-options-list::-webkit-scrollbar-track {
+  background: var(--input-background);
+  border-radius: 3px;
+}
+
+.dropdown-options-list::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+.dropdown-options-list::-webkit-scrollbar-thumb:hover {
+  background: var(--label-color);
+}
+
+.dropdown-option {
+  padding: 8px 15px;
+  cursor: pointer;
+  color: var(--input-text-color);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdown-option:hover {
+  background-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.dropdown-option.selected {
+  background-color: var(--highlight-color);
+  color: var(--button-text-color);
+  font-weight: 500;
+}
+
+.dropdown-option.selected:hover {
+  background-color: var(--highlight-color);
+  color: var(--button-text-color);
+}

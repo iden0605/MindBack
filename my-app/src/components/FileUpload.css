@@ -1,0 +1,271 @@
+.file-upload-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.file-upload-modal {
+    background: var(--background-gradient);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+
+.file-upload-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+.file-upload-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: var(--text-primary);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: #a0a0ff;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    background-color: #333366;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-btn:hover {
+    color: var(--accent-color);
+    background-color: #cccccc;
+}
+
+.file-drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    padding: 20px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.file-drop-area.dragging {
+    border-color: #007bff;
+    background-color: #e9f5ff;
+}
+
+.drop-message {
+    font-size: 1.1em;
+    color: #cccccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-icon {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.browse-link {
+    color: #d0b8ff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.selected-files {
+    margin-top: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.selected-files h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #fffdd0;
+}
+
+.file-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    background-color: #1a1a2e;
+}
+
+.file-item:last-child {
+    border-bottom: none;
+}
+
+.file-icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.file-name {
+    flex-grow: 1;
+    font-size: 1em;
+    color: #cccccc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.remove-file-btn {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #dc3545;
+    margin-left: 10px;
+    transition: color 0.2s ease;
+}
+
+.remove-file-btn:hover {
+    color: #c82333;
+}
+
+.remove-file-btn.marked-for-deletion {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.remove-file-btn.marked-for-deletion:hover {
+    color: #e0a800;
+}
+
+.upload-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.action-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.file-upload-modal .btn-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  color: var(--text-primary);
+  background-color: #5a3e85;
+}
+
+.file-upload-modal .btn-primary:hover:not(:disabled) {
+  background-color: var(--memory-journal) !important;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: #5a6268;
+}
+
+.action-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.year-prompt {
+    text-align: center;
+}
+
+.year-prompt h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.year-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.year-button {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.year-button:hover {
+    background-color: #e9ecef;
+    border-color: #bbb;
+}
+
+.username-prompt {
+    text-align: center;
+}
+
+.username-prompt h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.username-input,
+.username-dropdown {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.username-dropdown {
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.username-prompt .action-btn {
+    width: auto;
+}
